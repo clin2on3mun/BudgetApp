@@ -1,0 +1,25 @@
+<!-- app/views/payments/index.html.erb -->
+
+<h1>Payments for <%= @category.name %>: <%= @category.total_payment_amount%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.name %></td>
+        <td><%= payment.amount %></td>
+        <td><%= payment.created_at.day%>-<%=payment.created_at.strftime("%b")%>-<%=payment.created_at.year%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Payment', new_category_payment_path(@category) %>
+<%= link_to 'Back to Categories', categories_path %>

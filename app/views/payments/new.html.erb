@@ -1,0 +1,24 @@
+<div class="flex justify-center py-3">
+        <p><%= @payment.errors.full_messages_for(:category_ids).join(', ') %></p>
+        <%=form_with model: @payment, url: category_payments_path(@category) , local: true do |form| %>
+          <div class="mb-1">
+            <%= form.text_field :name,class: "w-96", placeholder: "Enter item name"%>
+            </div>
+           <div class="mb-1">
+            <%= form.number_field :amount, class: "w-96", placeholder: "Enter quantity"%>
+            </div>
+              <div class="field">
+                <%= form.label :category_ids, "Categories" %>
+                <% @categories.each do |category| %>
+                  <div>
+                    <%= form.check_box :category_ids, { multiple: true }, category.id, nil %>
+                    <%= form.label "payment_category_ids_#{category.id}", category.name %>
+                  </div>
+                <% end %>
+              </div>
+
+             <div class="flex justify-center col-span-2 mt-3">
+            <%= form.submit "Create payment", class: "bg-blue-500 text-white px-4 py-2 rounded-3xl cursor-pointer hover:bg-blue-400"%>
+            </div>
+         <% end %>
+ </div>
