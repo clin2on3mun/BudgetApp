@@ -14,10 +14,10 @@
  *= require_self
  */
 
- body{
-    background-color: #f0f2f1;
- }
+body {
+  background-color: #f0f2f1;
+}
 
-.proxima{
-   font-family: 'Proxima Nova', Georgia, sans-serif;
- }
+.proxima {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+}
