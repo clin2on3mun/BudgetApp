@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @categories = Category.includes(:payments).order(created_at: :desc)
+    @categories = current_user.categories.includes(:payments).order(created_at: :desc)
   end
 
   def new

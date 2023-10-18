@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_category
+  before_action :authenticate_user!
   def index
     @payments = @category.payments.order(created_at: :desc)
   end
