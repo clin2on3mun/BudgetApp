@@ -1,30 +1,24 @@
 <%= render 'shared/header', heading:'SIGNUP'%>
-<div  class="w-full flex flex-col justify-center gap-2  px-5 h-96">
+<div  class="w-full flex flex-col h-96">
 <%= form_for(resource, as: resource_name, class: "w-96", url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field mt-2">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full rounded-md", placeholder: "email"  %>
+  <div class="field ">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ", placeholder: "email"  %>
   </div>
-  <div class="field  mt-2">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-full rounded-md", placeholder:"fullname" %>
+  <div class="field  ">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ", placeholder:"fullname" %>
   </div>
-  <div class="field  mt-2">
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "w-full rounded-md", placeholder:"create password" %>
+  <div class="field ">
+    <%= f.password_field :password, autocomplete: "new-password", class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ", placeholder:"create password" %>
   </div>
 
-  <div class="field  mt-2">
-    <%= f.label :password_confirmation%><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "w-full rounded-md",placeholder:"Confirm password"  %>
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ",placeholder:"Confirm password"  %>
   </div>
 
-  <div class="actions mt-2">
-    <%= f.submit "Sign up" , class: "bg-create-button text-white rounded-md  px-4 py-2  cursor-pointer hover:bg-green-500" %>
+  <div class="actions">
+    <%= f.submit "Sign up" , class: " w-full bg-create-button text-white rounded-md  px-4 py-2  cursor-pointer hover:bg-green-500" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
 </div>
