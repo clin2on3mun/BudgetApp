@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
     category_ids = payment_params[:category_ids] || []
 
     if category_ids.empty?
-      @payment.errors.add(:category_ids, 'Please choose at least one category.')
+      redirect_to new_category_payment_path(@category), alert: 'Please choose at least one category.'
     else
       category_ids.each do |category_id|
         category = current_user.categories.find_by(id: category_id)
