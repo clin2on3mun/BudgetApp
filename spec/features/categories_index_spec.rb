@@ -16,7 +16,7 @@ RSpec.describe 'Category specs', type: :feature do
   end
 
   it 'see the title of a route' do
-    expect(page).to have_content('TRANSANCTION')
+    expect(page).to have_content('CATEGORIES')
   end
   it 'to have Content hospital' do
     expect(page).to have_content('hospital')
@@ -32,7 +32,7 @@ RSpec.describe 'Category specs', type: :feature do
     expect(page).to have_content('PAYMENTS')
   end
   it 'to have content icon' do
-    click_on 'Add New Transaction'
-    expect(page).to have_content('NEW TRANSACTION')
+    click_on 'Add New Category'
+    expect(page).to have_content('NEW CATEGORY')
   end
 end
