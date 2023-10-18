@@ -1,11 +1,12 @@
-<div class="flex justify-center py-3">
-        <p><%= @payment.errors.full_messages_for(:category_ids).join(', ') %></p>
-        <%=form_with model: @payment, url: category_payments_path(@category) , local: true do |form| %>
+<%= render 'shared/header', heading:'new payment'%>
+  <%= render 'shared/notice'%>
+   <div class="w-full flex items-center justify-center px-5 h-96">
+        <%=form_with model: @payment, url: category_payments_path(@category),class: "w-96" , local: true do |form| %>
           <div class="mb-1">
-            <%= form.text_field :name,class: "w-96", placeholder: "Enter item name"%>
+            <%= form.text_field :name,class: "w-full rounded-md", placeholder: "Enter item name", required:true%>
             </div>
            <div class="mb-1">
-            <%= form.number_field :amount, class: "w-96", placeholder: "Enter quantity"%>
+            <%= form.number_field :amount, class: "w-full rounded-md", placeholder: "Enter quantity", required:true%>
             </div>
               <div class="field">
                 <%= form.label :category_ids, "Categories" %>
@@ -17,8 +18,8 @@
                 <% end %>
               </div>
 
-             <div class="flex justify-center col-span-2 mt-3">
-            <%= form.submit "Create payment", class: "bg-blue-500 text-white px-4 py-2 rounded-3xl cursor-pointer hover:bg-blue-400"%>
+             <div class="col-span-2 mt-3">
+            <%= form.submit "Create payment", class: "bg-create-button text-white rounded-md  px-4 py-2  cursor-pointer hover:bg-green-500"%>
             </div>
          <% end %>
  </div>
