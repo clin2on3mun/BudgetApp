@@ -1,6 +1,16 @@
-<%= render 'shared/header', heading:'SIGNUP'%>
-<div  class="w-full flex flex-col h-96 mt-8">
 <%= form_for(resource, as: resource_name, class: "w-96", url: registration_path(resource_name)) do |f| %>
+
+<div class="flex items-center justify-between bg-blue-header p-5 text-white"> 
+  <p><a href = "/"><svg class="w-5"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+</svg>          </a></p>
+  <h1>SIGNUP</h1>
+  <div class="actions">
+    <%= f.submit "Next", class: "white"%>
+  </div>
+</div>
+<div  class="w-full flex flex-col h-96 mt-4">
+
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field ">
@@ -15,10 +25,6 @@
 
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ",placeholder:"Confirm password"  %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" , class: " w-full bg-create-button text-white rounded-md  px-4 py-2  cursor-pointer hover:bg-green-500" %>
   </div>
 <% end %>
 </div>
