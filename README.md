@@ -89,7 +89,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```bash
-  git clone https://github.com/clin2on3mun/Blog-app.git
+  git clone git@github.com:clin2on3mun/BudgetApp.git
 ```
 
 You need to setup database for these project
