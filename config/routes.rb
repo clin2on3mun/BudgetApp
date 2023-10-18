@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :users
+  root to: "splashs#index"
+  devise_for :users
+  devise_scope :user do
+
+    get 'users/sign_out', to: 'devise/sessions#destroy'
+  end
+  
   resources :categories , only: [:index, :new, :create] do
     resources :payments, only: [:index, :new, :create]
   end
-  root to: "categories#index"
 end

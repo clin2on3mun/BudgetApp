@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #f0f2f1;
+}
+
+.proxima {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+}
