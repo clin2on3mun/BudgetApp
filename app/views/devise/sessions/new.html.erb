@@ -1,5 +1,5 @@
 <%= render 'shared/header', heading:'LOGIN'%>
- <div class="w-full flex flex-col">
+ <div class="w-full flex flex-col mt-8">
   <%= form_for(resource, as: resource_name, class: "w-96", url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full  py-3 outline-none border border-t-0 border-x-0 border-inherit " , placeholder: "Enter your Email"%>
