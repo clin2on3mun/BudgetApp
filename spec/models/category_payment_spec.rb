@@ -1,5 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe CategoryPayment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { User.create(name: 'Munana', email: 'munana@gmail.com', password: '123456') }
+  let(:payment) { Payment.create(name: 'Psychology', amount: 10.0, user: user) }
+  let(:category) { Category.create(name: 'hospital', icon: 'hospital', user: user) }
+  let(:category_payment) { CategoryPayment.create(category: category, payment: payment) }
+  describe 'validation' do
+    it 'CategoryPayment to do validation' do
+      expect(category_payment).to be_valid
+    end
+    it 'category should be present' do
+      category_payment.category = nil
+      expect(category_payment).to_not be_valid
+    end
+    it 'payment id should be present' do
+      category_payment.payment = nil
+      expect(category_payment).to_not be_valid
+    end
+  end
 end
