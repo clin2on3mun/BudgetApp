@@ -6,7 +6,7 @@ RSpec.describe 'Category specs', type: :feature do
     User.delete_all
     @user = User.create!(name: 'Munana', email: 'munana@gmail.com', password: 'abcxyz123',
                          password_confirmation: 'abcxyz123')
-    Category.create(name: 'hospital', icon: 'hospital', user: @user) 
+    Category.create(name: 'hospital', icon: 'hospital', user: @user)
 
     visit new_user_session_path # Assuming this is your sign-in page
     fill_in 'Enter your Email', with: @user.email
@@ -35,5 +35,4 @@ RSpec.describe 'Category specs', type: :feature do
     click_on 'Add New Transaction'
     expect(page).to have_content('NEW TRANSACTION')
   end
-  
 end

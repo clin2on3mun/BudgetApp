@@ -7,11 +7,11 @@ RSpec.describe 'Category specs', type: :feature do
     User.delete_all
     @user = User.create!(name: 'Munana', email: 'munana@gmail.com', password: 'abcxyz123',
                          password_confirmation: 'abcxyz123')
-    @category= Category.create(name: 'hospital', icon: 'hospital', user: @user) 
-    @payment1 = Payment.create(name:'Psychologist', amount: 10.0, user: @user)
-    CategoryPayment.create(category:@category, payment: @payment1)
-    @payment2 = Payment.create(name:'Dentist', amount: 200.0, user: @user)
-    CategoryPayment.create(category:@category, payment: @payment2)
+    @category = Category.create(name: 'hospital', icon: 'hospital', user: @user)
+    @payment1 = Payment.create(name: 'Psychologist', amount: 10.0, user: @user)
+    CategoryPayment.create(category: @category, payment: @payment1)
+    @payment2 = Payment.create(name: 'Dentist', amount: 200.0, user: @user)
+    CategoryPayment.create(category: @category, payment: @payment2)
 
     visit new_user_session_path # Assuming this is your sign-in page
     fill_in 'Enter your Email', with: @user.email
