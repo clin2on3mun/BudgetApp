@@ -13,17 +13,17 @@
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field ">
+  <div class="field pl-4 bg-white">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ", placeholder: "email"  %>
   </div>
-  <div class="field  ">
+  <div class="field pl-4 bg-white ">
     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ", placeholder:"fullname" %>
   </div>
-  <div class="field ">
+  <div class="field pl-4 bg-white ">
     <%= f.password_field :password, autocomplete: "new-password", class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ", placeholder:"create password" %>
   </div>
 
-  <div class="field">
+  <div class="field pl-4 bg-white">
     <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "w-full py-3 outline-none border border-t-0 border-x-0 border-inherit ",placeholder:"Confirm password"  %>
   </div>
 <% end %>

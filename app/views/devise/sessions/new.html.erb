@@ -10,16 +10,16 @@
     </div>
 </div>
  <div class="w-full flex flex-col mt-4">
-    <div class="field">
+    <div class="field pl-4 bg-white">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full  py-3 outline-none border border-t-0 border-x-0 border-inherit " , placeholder: "Enter your Email"%>
     </div>
 
-    <div class="field ">
+    <div class="field pl-4 bg-white">
       <%= f.password_field :password, autocomplete: "current-password", class: " w-full  py-3 outline-none border border-t-0 border-x-0 border-inherit ", placeholder:"Enter password"%>
     </div>
 
   <% end %>
-     <%= link_to "Forgot your password?", new_password_path(resource_name), class:"text-center text-gray-400 mt-2" %>
+     <%= link_to "Forgot your password?", new_password_path(resource_name), class:"text-center text-gray-400 mt-2 hover:text-blue-500" %>
   </div>
 
 
